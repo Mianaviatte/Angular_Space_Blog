@@ -18,7 +18,7 @@ export interface ClientOptions {
   providedIn: 'root'
 })
 export class ApiService {
-  getUrl = 'https://api.spaceflightnewsapi.net/v4/reports'
+  getUrl = 'https://api.spaceflightnewsapi.net/v4/articles'
 
   constructor(private readonly http: HttpClient,) { }
 

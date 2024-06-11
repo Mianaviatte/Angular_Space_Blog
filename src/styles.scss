@@ -45,14 +45,14 @@ $light-theme: mat.define-theme((
 // that you are using.
 :root {
   @include mat.all-component-themes($Angular-Codebridge-theme);
-  // Apply the dark theme by default
-  @include mat.core-theme($dark-theme);
-  @include mat.button-theme($dark-theme);
+  // Apply the light theme by default
+  @include mat.core-theme($light-theme);
+  @include mat.button-theme($light-theme);
 
-  // Apply the light theme only when the user prefers light themes.
-  @media (prefers-color-scheme: light) {
-    @include mat.core-color($light-theme);
-    @include mat.button-color($light-theme);
+  // Apply the dark theme only when the user prefers dark themes.
+  @media (prefers-color-scheme: dark) {
+    @include mat.core-color($dark-theme);
+    @include mat.button-color($dark-theme);
   }
 }
 
@@ -75,7 +75,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .home-card {
   max-width: 30%;
-  margin: 10%;
+  margin: 5%;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 /* Extra small devices (phones, 420px and down) */
@@ -83,11 +87,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .home-card {
     max-width: 90%;
   }
+
+  .home-form-field {
+    max-width: 90%;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 420px and up) */
 @media only screen and (min-width: 420px) {
   .home-card {
+    max-width: 80%;
+  }
+
+  .home-form-field {
     max-width: 80%;
   }
 }
@@ -101,6 +113,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .home-card {
     max-width: 40%;
+  }
+
+  .home-form-field {
+    max-width: 70%;
   }
 
 }

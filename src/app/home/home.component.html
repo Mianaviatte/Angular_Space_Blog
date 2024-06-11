@@ -1,7 +1,21 @@
 <p>Filter by keywords</p>
-<!-- search bar -->
 
+<!-- search bar -->
+ <div class="home-form-field">
+    <mat-form-field >
+        <mat-label>Search bar</mat-label>
+        <input matInput type="text" [(ngModel)]="value" (ngModelChange)="getItems($event)">
+        @if (value) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+ </div>
+
+  
 <!-- count of articles after filer -->
+<p>Results: {{articles?.count}}</p>
 
 <mat-divider></mat-divider>
 

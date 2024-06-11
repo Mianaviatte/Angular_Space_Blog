@@ -9,23 +9,51 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the theme object.
-$Angular_Codebridge-theme: mat.define-theme((
+$Angular-Codebridge-theme: mat.define-theme((
   color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$chartreuse-palette,
   ),
   density: (
     scale: 0,
   )
 ));
 
+// Define a dark theme
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$green-palette,
+    tertiary: mat.$spring-green-palette,
+  ),
+
+));
+
+// Define a light theme
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$green-palette,
+    tertiary: mat.$spring-green-palette,
+  ),
+
+));
+
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 :root {
-  @include mat.all-component-themes($Angular_Codebridge-theme);
+  @include mat.all-component-themes($Angular-Codebridge-theme);
+  // Apply the dark theme by default
+  @include mat.core-theme($dark-theme);
+  @include mat.button-theme($dark-theme);
+
+  // Apply the light theme only when the user prefers light themes.
+  @media (prefers-color-scheme: light) {
+    @include mat.core-color($light-theme);
+    @include mat.button-color($light-theme);
+  }
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -36,5 +64,67 @@ $Angular_Codebridge-theme: mat.define-theme((
 // @include mat.color-variants-backwards-compatibility($Angular_Codebridge-theme);
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { 
+  height: 100%; 
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px; 
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.home-card {
+  max-width: 30%;
+  margin: 10%;
+}
+
+/* Extra small devices (phones, 420px and down) */
+@media only screen and (max-width: 420px) {
+  .home-card {
+    max-width: 90%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 420px and up) */
+@media only screen and (min-width: 420px) {
+  .home-card {
+    max-width: 80%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    margin: auto;
+    width: 95%;
+  }
+  
+  .home-card {
+    max-width: 40%;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+      margin: auto;
+      width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+      margin: auto ;
+      width: 85%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  body {
+      margin: auto ;
+      width: 80%;
+  }
+}
+
+

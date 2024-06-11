@@ -4,11 +4,12 @@ import { HttpClientModule } from "@angular/common/http";
 import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card'; 
 import {RouterLink}  from '@angular/router';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, MatCardModule, RouterLink],
+  imports: [HttpClientModule, CommonModule, MatCardModule, MatDividerModule, RouterLink],
   providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ActivatedRoute } from '@angular/router';
 import {RouterLink}  from '@angular/router';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [ MatCardModule, MatIconModule, RouterLink ],
+  imports: [ MatCardModule, MatIconModule, MatProgressBarModule, RouterLink ],
   providers: [ApiService],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'

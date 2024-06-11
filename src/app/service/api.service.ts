@@ -25,4 +25,8 @@ export class ApiService {
   get(options: ClientOptions = { }): Observable<any> {
     return this.http.get(this.getUrl, options);
   }
+
+  getId(id: number, options: ClientOptions = { }): Observable<any> {
+    return this.http.get(this.getUrl+'/'+id, options);
+  }
 }

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   this.getItems();
  }
 
- getItems(search = '') :void {
+ getItems(search = ''): void {
    const options: ClientOptions = {
      ...search && {
       params: {

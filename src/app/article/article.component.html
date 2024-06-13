@@ -4,6 +4,12 @@
 }
 
 @if (article) {
+  
+  <div class="big-img">
+    <img [src]="article.image_url" [alt]="article.title">
+  </div>
+
+  <div class="container">
     <mat-card class="article-card">
         <mat-card-header>
           <mat-card-title class="article-title">{{article.title}}</mat-card-title>
@@ -16,12 +22,11 @@
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt enim ducimus voluptatem nulla temporibus at rerum quia neque sunt. Perspiciatis, et vel! Praesentium ad vitae voluptatum. Nemo a provident aut, et optio minus reprehenderit placeat odit rerum illo minima? A autem fugit itaque laborum enim! Incidunt culpa quaerat quas iure aspernatur id quasi molestias? Corrupti laudantium dolore quia accusamus eum, id porro temporibus eaque labore ad hic ex distinctio saepe repellendus cupiditate animi pariatur nostrum debitis repellat velit voluptatum nam libero, totam molestiae. Labore dignissimos facilis dolor placeat rerum, consectetur consequatur vel et impedit perspiciatis! Quo libero cupiditate quos, iure similique quis molestias maiores rem dignissimos obcaecati unde quam soluta consequatur temporibus, beatae eligendi, omnis necessitatibus amet recusandae! Accusantium non harum, neque accusamus recusandae tempore animi maxime quasi obcaecati facere nesciunt sunt rem tenetur unde molestiae ex quibusdam. Repellat hic nihil velit ipsam inventore similique unde nostrum obcaecati architecto. Eum voluptate natus quasi? Impedit officiis repellendus nam in, illum asperiores dolore nisi tenetur corrupti temporibus eveniet repellat! Tempore quaerat atque totam corrupti facilis, eum vitae aut id praesentium eos? Eaque, ab sed? Iste ratione non odit. Saepe voluptatem ullam molestiae ipsa nostrum facilis recusandae aliquid ad repellat iure odio nemo voluptate earum quaerat odit ratione cum, quo aperiam. Inventore ad libero dolorem vero laboriosam officiis. Laudantium assumenda eaque nostrum aliquid magnam, reiciendis asperiores officia sequi voluptas tenetur soluta quis debitis animi, doloribus repellat adipisci fuga. Itaque praesentium dignissimos ratione, commodi saepe similique quos aspernatur ad inventore necessitatibus, aliquam quam asperiores error recusandae voluptatum dolores sit dolore, libero in. Id blanditiis possimus quasi esse, itaque debitis fugiat ad suscipit culpa aspernatur officia quae omnis molestiae officiis sint incidunt deserunt exercitationem temporibus dicta ipsa sequi delectus minus aliquid? Expedita, illum magni perspiciatis, accusantium nihil, aperiam unde soluta pariatur harum dolores quidem earum id natus ratione dolor? Eaque excepturi repudiandae facere porro sapiente. Ea illum vitae earum veniam assumenda, excepturi fugiat culpa, non rem quaerat ipsum officiis perferendis iure optio. Pariatur blanditiis officiis nesciunt voluptas consequuntur iusto cumque, at eveniet expedita nihil facilis sequi dolor fugit aliquam earum, ex cupiditate delectus! Laudantium exercitationem, earum quo quia suscipit minima delectus expedita! Officia, voluptatem? Repellendus voluptates quis architecto quod commodi dolore illo repudiandae adipisci aperiam rerum nulla repellat eaque eveniet, sunt cumque nostrum, nobis fugit delectus illum reprehenderit ab officiis, facere dignissimos! Est dolor a quae iste laborum ab, illo soluta quidem qui dolores dicta.</p>
         </mat-card-content>
       </mat-card>
+    </div>
       <a mat-button  [routerLink]="['/']">
         <mat-icon iconPositionStart aria-hidden="false" aria-label="Arrow icon">
           arrow_back
         </mat-icon>
         Back to homepage
       </a>
-
-      <!-- <img [src]="article.image_url" [alt]="article.title"> -->
 }

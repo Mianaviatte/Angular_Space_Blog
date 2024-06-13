@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@include mat.core();
+  
+body { margin: auto; padding: 5%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.home-page {
+    padding: 5%;
+}

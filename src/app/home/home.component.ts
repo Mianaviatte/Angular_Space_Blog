@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
    const options: ClientOptions = {
      ...search && {
       params: {
-        title_contains, summary_contains
+        search
+        // title_contains, summary_contains
       }
      }
    }

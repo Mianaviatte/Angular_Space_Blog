@@ -12,11 +12,12 @@ import {RouterLink}  from '@angular/router';
 import {MatDividerModule} from '@angular/material/divider';
 import { NgOptimizedImage } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { HighlighterPipe } from "../pipes/highlighter.pipe";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, NgOptimizedImage, DatePipe],
+  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, NgOptimizedImage, DatePipe, HighlighterPipe],
   providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -41,8 +42,8 @@ export class HomeComponent implements OnInit {
    const options: ClientOptions = {
      ...search && {
       params: {
-        search
-        // title_contains, summary_contains
+        title_contains: search, 
+        summary_contains: search,
       }
      }
    }

@@ -30,19 +30,20 @@
         <img mat-card-image [src]="article.image_url" [alt]="article.title">
         <mat-card-header>
             <mat-icon matPrefix aria-hidden="false" aria-label="Date icon" fontIcon="calendar_today"></mat-icon>
-            <mat-card-subtitle>{{article.published_at}}</mat-card-subtitle>
+            <mat-card-subtitle>{{ this.article.published_at | date:'longDate' }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-card-title>{{article.title}}</mat-card-title>
         </mat-card-content>
         <mat-card-content>
           <p>
-            {{article.summary}}
+            {{article.summary }} 
           </p>
         </mat-card-content>
         <mat-card-actions>
-            <a [routerLink]="[ article.id ]">Read more </a>
-            <mat-icon matSuffix aria-hidden="false" aria-label="Arrow icon" fontIcon="arrow_forward"></mat-icon>
+            <a mat-button [routerLink]="[ article.id ]">
+            <mat-icon matSuffix aria-hidden="false" aria-label="Arrow icon">arrow_forward</mat-icon>
+            Read more </a>
         </mat-card-actions>
       </mat-card>
 }

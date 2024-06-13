@@ -11,12 +11,12 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {RouterLink}  from '@angular/router';
 import {MatDividerModule} from '@angular/material/divider';
 import { NgOptimizedImage } from '@angular/common';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, NgOptimizedImage],
+  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, NgOptimizedImage, DatePipe],
   providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
    const options: ClientOptions = {
      ...search && {
       params: {
-        search,
+        title_contains, summary_contains
       }
      }
    }

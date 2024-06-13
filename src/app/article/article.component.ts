@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ActivatedRoute } from '@angular/router';
 import {RouterLink}  from '@angular/router';
@@ -11,7 +12,7 @@ import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [ MatCardModule, MatIconModule, MatProgressBarModule, NgOptimizedImage, RouterLink ],
+  imports: [ MatCardModule, MatIconModule, MatButtonModule, MatProgressBarModule, NgOptimizedImage, RouterLink ],
   providers: [ApiService],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'

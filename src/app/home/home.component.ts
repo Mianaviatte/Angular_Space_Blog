@@ -10,11 +10,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {RouterLink}  from '@angular/router';
 import {MatDividerModule} from '@angular/material/divider';
+import { NgOptimizedImage } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule],
+  imports: [CommonModule, MatCardModule, MatDividerModule, MatProgressBarModule, RouterLink, MatIconModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, NgOptimizedImage],
   providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

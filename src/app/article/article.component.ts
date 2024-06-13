@@ -5,11 +5,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ActivatedRoute } from '@angular/router';
 import {RouterLink}  from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
+
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [ MatCardModule, MatIconModule, MatProgressBarModule, RouterLink ],
+  imports: [ MatCardModule, MatIconModule, MatProgressBarModule, NgOptimizedImage, RouterLink ],
   providers: [ApiService],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'

@@ -11,49 +11,21 @@
 
 $Angular-Codebridge-theme: mat.define-theme((
   color: (
-    primary: mat.$cyan-palette,
-    tertiary: mat.$chartreuse-palette,
+    theme-type: light,
+    primary: mat.$green-palette,
+    tertiary: mat.$spring-green-palette,
   ),
   density: (
     scale: 0,
   )
 ));
 
-// Define a dark theme
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$green-palette,
-    tertiary: mat.$spring-green-palette,
-  ),
-
-));
-
-// Define a light theme
-$light-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$green-palette,
-    tertiary: mat.$spring-green-palette,
-  ),
-
-));
-
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 :root {
-  @include mat.all-component-themes($Angular-Codebridge-theme);
   // Apply the light theme by default
-  @include mat.core-theme($light-theme);
-  @include mat.button-theme($light-theme);
-
-  // Apply the dark theme only when the user prefers dark themes.
-  @media (prefers-color-scheme: dark) {
-    @include mat.core-color($dark-theme);
-    @include mat.button-color($dark-theme);
-  }
+  @include mat.all-component-themes($Angular-Codebridge-theme);
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -67,11 +39,9 @@ $light-theme: mat.define-theme((
 html, body { 
   height: 100%; 
   width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px; 
 }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 10%; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .home-card {
   max-width: 30%;
@@ -82,21 +52,14 @@ mat-form-field {
   width: 100%;
 }
 
-/* Extra small devices (phones, 420px and down) */
-@media only screen and (max-width: 420px) {
-  .home-card {
-    max-width: 90%;
-  }
-
-  .home-form-field {
-    max-width: 90%;
-  }
+.home-form-field {
+  max-width: 50%;
 }
 
-/* Small devices (portrait tablets and large phones, 420px and up) */
-@media only screen and (min-width: 420px) {
+/* Extra small devices */
+@media only screen and (max-width: 599.98px) {
   .home-card {
-    max-width: 80%;
+    max-width: 90%;
   }
 
   .home-form-field {
@@ -104,42 +67,42 @@ mat-form-field {
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* Small devices (portrait tablets and large phones) */
+@media only screen and ((min-width: 600px) and (max-width: 959.98px)) {
+  .home-card {
+    max-width: 80%;
+  }
+
+  .home-form-field {
+    max-width: 70%;
+  }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and ((min-width: 960px) and (max-width: 1279.98px)) {
   body {
     margin: auto;
-    width: 95%;
+    width: 90%;
   }
   
   .home-card {
     max-width: 40%;
   }
 
-  .home-form-field {
-    max-width: 70%;
-  }
-
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* Large devices (laptops/desktops) */
+@media only screen and ((min-width: 1280px) and (max-width: 1919.98px)) {
   body {
       margin: auto;
-      width: 90%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  body {
-      margin: auto ;
-      width: 85%;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  body {
-      margin: auto ;
       width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body {
+      margin: auto ;
+      width: 70%;
   }
 }
 

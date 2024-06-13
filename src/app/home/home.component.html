@@ -1,0 +1,56 @@
+
+<div class="home-page">
+  <p>Filter by keywords</p>
+
+  <!-- search bar -->
+  <div class="home-form-field">
+      <mat-form-field appearance="outline">
+          <mat-label>Search bar</mat-label>
+          <mat-icon matPrefix aria-hidden="false" aria-label="Search icon" fontIcon="search"></mat-icon>
+          <input matInput type="text" [(ngModel)]="value" (ngModelChange)="getItems($event)">
+          @if (value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''; getItems('')">
+              <mat-icon>close</mat-icon>
+            </button>
+          }
+        </mat-form-field>
+  </div>
+
+    
+  <!-- count of articles after filer -->
+  <p>Results: {{articles?.count}}</p>
+
+  <mat-divider></mat-divider>
+
+  @if (loading) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+
+  <div class="d-flex">
+  @for (article of articles?.results; track article) {
+
+      <mat-card class="home-card mat-elevation-z8" >
+          <img mat-card-image [src]="article.image_url" [alt]="article.title">
+          <mat-card-header>
+            <mat-card-subtitle>
+              <mat-icon aria-hidden="false" aria-label="Date icon">calendar_today</mat-icon>
+              {{ this.article.published_at | date:'longDate' }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <!-- <mat-card-title>{{article.title}}</mat-card-title> -->
+              <mat-card-title [innerHtml]="article.title | highlighter:value:'partial'"></mat-card-title>
+          </mat-card-content>
+          <mat-card-content>
+            <p [innerHtml]="article.summary | slice:0:100 | highlighter:value:'partial'">
+              <!-- {{ (article.summary.length>100)? (article.summary | slice:0:100)+'...':(article.summary) }}  -->
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+              <a mat-button [routerLink]="[ article.id ]">
+              <mat-icon matSuffix aria-hidden="false" aria-label="Arrow icon">arrow_forward</mat-icon>
+              Read more </a>
+          </mat-card-actions>
+        </mat-card>
+  }
+</div>
+</div>

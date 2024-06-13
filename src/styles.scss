@@ -1,0 +1,75 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$Angular-Codebridge-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$green-palette,
+    tertiary: mat.$spring-green-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  // Apply the light theme by default
+  @include mat.all-component-themes($Angular-Codebridge-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($Angular_Codebridge-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($Angular_Codebridge-theme);
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field {
+  width: 100%;
+}
+
+.highlighted-text {
+  background: yellow;
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 599.98px) {
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and ((min-width: 600px) and (max-width: 959.98px)) {
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and ((min-width: 960px) and (max-width: 1279.98px)) {
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and ((min-width: 1280px) and (max-width: 1919.98px)) {
+}
+
+@media only screen and (min-width: 1920px) {
+}
+
+

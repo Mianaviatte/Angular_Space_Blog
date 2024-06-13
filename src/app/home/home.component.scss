@@ -1,0 +1,40 @@
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-page {
+    padding: 5%;
+}
+
+.home-form-field {
+    max-width: 50%;
+  }
+
+.home-card {
+    width: 29%;
+    margin: 2%;
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 599.98px) {
+    .home-card {
+     width: 90%;
+    }
+  
+    .home-form-field {
+      max-width: 80%;
+    }
+  }
+  
+  /* Small devices (portrait tablets and large phones) */
+  @media only screen and ((min-width: 600px) and (max-width: 959.98px)) {
+    .home-card {
+     width: 45%;
+     }
+  
+    .home-form-field {
+      max-width: 70%;
+    }
+  }

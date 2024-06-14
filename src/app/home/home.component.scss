@@ -1,3 +1,12 @@
+@use '@angular/material' as mat;
+
+mat-card {
+  @include mat.elevation(8);
+}
+
+// mat-form-field {
+//   @include mat.elevation(8);
+// }
 
 .d-flex {
     display: flex;
@@ -15,6 +24,11 @@
 .home-card {
     width: 29%;
     margin: 2%;
+}
+
+.image{
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Extra small devices */

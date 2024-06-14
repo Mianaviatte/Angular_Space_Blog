@@ -29,8 +29,8 @@
   <div class="d-flex">
   @for (article of articles?.results; track article) {
 
-      <mat-card class="home-card mat-elevation-z8" >
-          <img mat-card-image [src]="article.image_url" [alt]="article.title">
+      <mat-card class="home-card" >
+          <img class="image" mat-card-image [src]="article.image_url" [alt]="article.title">
           <mat-card-header>
             <mat-card-subtitle>
               <mat-icon aria-hidden="false" aria-label="Date icon">calendar_today</mat-icon>

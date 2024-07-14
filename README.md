@@ -1,4 +1,4 @@
-# Single Page Application with Angular for Codebridge
+# Single Page Application with Angular Space Blog
 
 This project was built with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
